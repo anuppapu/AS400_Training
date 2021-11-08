@@ -1,0 +1,24 @@
+DVAR              S             10    inz('abc')              
+Dvary             s             20a   varying inz('abcdef')   
+DNUM              S              5  2 inz(111)                
+ *                                                            
+DLN1              S              2  0                         
+DLN2              S              2  0                         
+DLN3              S              2  0                         
+DSZ1              S              2  0                         
+DSZ2              S              2  0                         
+ *                                                            
+Dvar1             S             15  8 inz(123.12345678)       
+Dvar2             S              5  0                         
+c                   z-add     var1          var2              
+c                   eval      ln1 = %len(var)                 
+c                   eval      ln2 = %len(num)                 
+c                   eval      ln3 = %len(vary)                
+c                   eval      sz1 = %size(var)                
+c                   eval      sz2 = %size(num)                
+c     ln1           dsply                                     
+c     ln2           dsply                       
+c     ln3           dsply                       
+c     sz1           dsply                       
+c     sz2           dsply                       
+C                   eval      *inlr = '1'       
