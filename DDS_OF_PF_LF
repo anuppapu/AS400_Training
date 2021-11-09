@@ -1,0 +1,39 @@
+Figure 1 - DDS for Physical File Without Key 
+
+     A          R CUREC                    TEXT('CUSTOMER FILE')   
+     A            CUNUM          5S 0      TEXT('CUSTOMER #')      
+     A            CUNAME        30A        TEXT('CUSTOMER NAME')   
+     A            CUADR         30A        TEXT('CUSTOMER ADDRESS')
+     A            CUCITY        18A        TEXT('CUSTOMER CITY')   
+     A            CUSTAT         2A        TEXT('CUSTOMER STATE')    
+                      
+Figure 2 - DDS for Physical File With Key Fields
+
+     A                                     UNIQUE                  
+     A          R CUREC                    TEXT('CUSTOMER FILE')   
+     A            CUNUM          5S 0      TEXT('CUSTOMER #')      
+     A            CUNAME        30A        TEXT('CUSTOMER NAME')   
+     A            CUADR         30A        TEXT('CUSTOMER ADDRESS') 
+     A            CUCITY        18A        TEXT('CUSTOMER CITY')   
+     A            CUSTAT         2A        TEXT('CUSTOMER STATE')  
+      *                                                                                                     
+     A          K CUNUM  
+
+
+Figure 3 - DDS for Logical File to Resequence Order of Records
+
+     A          R CUREC                    PFILE(CUS)                
+     A                                     TEXT('CUST BY CITY / STATE')
+      *                                                               
+     A          K CUCITY                                              
+     A          K CUSTAT 
+                                                
+
+Figure 4 - DDS for Logical File to Select and Resequence
+
+     A          R CUREC                    PFILE(CUS)                
+     A                                     TEXT('CUST NAME/ACTIVE ONLY')
+     A          K CUNAME                                              
+      *                                                               
+     A          S CUSTAT                   COMP(EQ 'A')
+
